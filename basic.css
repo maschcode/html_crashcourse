@@ -3,7 +3,19 @@
     background-color: lightgray;
 }
 
-h1 { color: red; }
+// Define Basic Page Layout
+
+header, footer {
+    
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin: 0px;
+}
+
+main {
+    margin: 0px;
+}
 
 
 
