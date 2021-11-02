@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
+
+    <!-- CSS Basics ( :root, body ) -->
+    <link rel="stylesheet" href="css/root-body.css">
+
+    <!-- CSS Header -->
+    <link rel="stylesheet" href="css/header.css">
+
+    <!-- CSS Main -->
+    <link rel="stylesheet" href="css/main.css">
+ 
+    
+    <title>HTML - Crashcourse </title>
+
+</head> 
+
+<!-- important for :target -> display:none/block -->
+<!-- because if display:none it will (delete) from parent tag (body) -->
+<!-- to let it show again, it should know where it should show -->
+<body id="open-nav">
+
+    
+
+    <!-- ----------------------------------------------------------------- -->
+    <!-- Background ( Colormix / Video )                                   --> 
+    <!-- Mobile -> Colormix , Video -> Desktop                             -->
+    <!-- ----------------------------------------------------------------- -->
+
+    <!-- Load bg-colormix as background depends on width size -->
+    <div class="bg-colormix"></div>
+
+
+    <video class="bg-video" src="video/bg-video-structure.mp4" autoplay muted loop>-->
+        
+        <!-- Load Video only by 1280px width -->
+        <!-- ( Google Chrome downlaod Video in cache ) -->
+        <!-- ( Firefox download Video only by 1280px ) -->
+        <source src="video/bg-video-structure.mp4" media="(min-width:1280px)"/> 
+
+    </video>
+
+
+
+
+    <!-- ----------------------------------------------------------------- -->
+    <!-- Header - Navigation                                               --> 
+    <!-- ----------------------------------------------------------------- -->
+    <header id="header-grid">
+
+
+        <!-- ---------------------------- -->
+        <!-- 1.col -->
+        <!-- ---------------------------- -->
+
+        <!-- Link > closed mode -->
+        <a href="#open-nav" id="open-nav">
+            <div id="style-h-navbox">
+
+                <span id="span-centered-nav">✨
+
+                    <span class="mobile-unshown">HTML - Templates</span>
+
+                </span>
+
+                <img src="img/png/pfeil-rechts.png" class="img-arrow-size">
+
+            </div>
+        </a>    
+
+        <!-- Link > open mode -->
+        <a href="#closed-nav" id="closed-nav">
+            <div id="style-h-navbox">
+
+                <span id="span-centered-nav">✨
+
+                    <span class="mobile-unshown">HTML - Templates</span>
+
+                </span>
+
+                <img src="img/png/pfeil-links.png" class="img-arrow-size">
+
+            </div>
+        </a>
+
+
+
+
+
+
+        <!-- ---------------------------- -->
+        <!-- 2.col -->
+        <!-- ---------------------------- -->
+
+        <div id="style-h-navbox-title">
+
+            <span id="span-centered-nav-title"> HTML - Crashcourse
+
+                <span class="mobile-unshown"> ( PDF & HTML - Templates ) </span>
+
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+   
+
+    <!-- ----------------------------------------------------------------- -->
+    <!-- Main                                                              --> 
+    <!-- ----------------------------------------------------------------- -->
+    <!-- 1. Main - Content ( pdf, link-nav style-infoboxes )               -->
+    <!-- 2. Navbox-Links ( ul,li )                                         -->
+    <!-- ----------------------------------------------------------------- -->
+    <main>
+
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- 1. Main - Content ( pdf, link-nav style-infoboxes )               --> 
+        <!-- ----------------------------------------------------------------- -->
+        <div id="grid-main-center">
+
+
+            <!-- ----------------------------------- -->
+            <!-- PDF - INFOBOX                       -->
+            <!-- ----------------------------------- -->
+
+            <div class="style-infobox">
+
+               <table>
+                   <tr>
+                        <!-- -------------------------------- -->
+                        <!-- svg - infobox - title - image    -->
+                        <!-- -------------------------------- -->
+                        <td>  <img src="img/svg/pdf-logo.svg.png" class="svg-h-size">  </td>
+                      
+                       
+
+
+
+                        <!-- ------------------------------------- -->
+                        <!-- infobox - title & svg flag (image)    -->
+                        <!-- ------------------------------------- -->
+                       <td>
+                       
+
+                            <!-- Flexlayout - Header ( space-between -> flag right, title left ) -->
+                            <div class="flex-infobox-title">
+                                
+                                <span class="style-ib-title">HTML Mini PDF Buch</span>
+
+                                <img src="img/svg/svg-flag-germany.svg" class="svg-hf-size" >
+                            
+                            </div>
+
+
+
+                            <!-- 2nd title of infobox ( mini info ) -->
+                            <div class="style-ib-2nd ic-size">( from 0 to hero )</div>
+
+
+                            
+                            <!-- clipart-pdf-reading - float right -->
+                            <img src="img/svg/neu-pdf-lesen.svg" class="svg-clipart-size2">
+
+                            
+                            
+                            <!-- PDF Links ( box ) -->
+                            <div class="ic-size ic-size-line-height pdf-infobox-content-pos">
+
+
+                                <div class="pdf-link">
+                                    <a href="https://www.google.de" target="_blank" class="link-pdf">&raquo; HTML - Grundlagen.pdf</a>
+                                </div>
+    
+
+                            </div>
+                       
+                       
+                        </td>   
+                   </tr>
+                  
+               </table>
+            </div> <!-- end of pdf-infobox -->
+
+
+            <!-- ----------------------------------- -->
+            <!-- Link-Nav-infobox                    -->
+            <!-- ----------------------------------- -->
+
+            <a href="#open-nav" class="info-nav-link" >
+
+                <div class="style-infobox">
+
+
+                    <table>
+                        <tr>
+                            <!-- -------------------------------- -->
+                            <!-- svg - infobox - title - image    -->
+                            <!-- -------------------------------- -->
+                            <td>
+
+                                <div class="link-hover">
+                                    <img src="img/svg/arrow-upto-black.svg" class="svg-h-size" alt="black-img">
+                                    <img src="img/svg/arrow-upto-white.svg" class="svg-h-size" alt="white-img">
+                                    <!--<img src="img/svg/tiger.svg" class="svg-h-size" alt="white-img">-->
+                                </div>
+
+                            </td>
+
+
+
+                            <!-- ------------------------------------- -->
+                            <!-- infobox - title & svg flag (image)    -->
+                            <!-- ------------------------------------- -->
+                            <td>
+                            
+                                <!-- Flexlayout - Header ( space-between -> flag right, title left ) -->
+                                <div class="flex-infobox-title">
+                                    
+
+
+                                    <!-- tell flex that belongs to same area --> 
+                                    <span>
+
+                                        <span class="style-ib-title">Click to show HTML - Templates</span> <br>
+                                        <span class="style-ib-2nd ic-size">( have fun to explore )</span>
+
+                                    </span>
+
+                                    <!-- tell flex that belongs to same area --> 
+                                    <div>
+    
+                                        <img src="img/svg/gb.svg" class="svg-hf-size"><br>
+                                        <img src="img/svg/usa-flag.svg" class="svg-hf-size">
+                                
+                                    </div>
+                                    
+                    
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        <!-- ------------------------------------- -->
+                        <!-- link-nav - infotext & float clipart   -->
+                        <!-- ------------------------------------- -->
+                        <!-- clean way to close float handling before -->
+                        <tr>
+                            <td colspan="3">
+
+                                
+                                <img src="img/svg/links-g.svg" class="svg-clipart-size" >
+
+                                <div class="ic-size ic-size-line-height link-nav-infbox-content-pos">
+                                    It will be open my
+                                    HTML - Templates List where u can find all my HTML - Templates.
+                                    To every Template Art u get Information how to test it and
+                                    which functionalities will be inside.
+                                </div>   
+
+                            
+                            </td>
+                        </tr>
+                    
+                    </table>
+                
+                
+                </div> <!-- end of link-nav infobox -->
+            </a>
+
+
+        </div> <!-- end of main grid -->
+             
+          
+            
+
+        
+
+        
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- 2. Navbox-Links ( ul,li )                                         --> 
+        <!-- ----------------------------------------------------------------- -->
+
+        <div class="navbox-c-flex"> <!-- color:var(--css-blue); -->
+
+           
+            <!-- ---------------------- -->
+            <!-- 1.col , 1.row          -->
+            <!-- ---------------------- -->
+            
+            <div class="navbox-c-list">
+
+
+                <ul class="nav-ul">
+
+                    <!-- -------------------------------- -->
+                    <!-- Header 01                        -->
+                    <!-- -------------------------------- -->
+                    <li>
+                        
+                        <span>  
+
+                            <a href="https://google.de" target="_blank" >
+                                1.0 &nbsp; &#8210; &nbsp; Tables ( x 4 ) ▸
+                            </a>
+
+                        </span>
+                        
+                    </li>
+
+                    <!-- -------------------------------- -->
+                    <!-- Header 02                        -->
+                    <!-- -------------------------------- -->
+                    <li>
+                        
+                        <span>2.0 &nbsp; &#8210; &nbsp; Forms </span>
+
+                        <ul>
+
+                            <li><a href="https://google.de" target="_blank">
+                                2.1 - Login ▸</a> </li>
+
+                            <li ><a href="https://google.de" target="_blank" >
+                                2.2 - Registration ▸</a> </li>
+
+                            <li ><a href="https://google.de" target="_blank" >
+                                2.3 - File Upload Form ▸</a> </li>
+
+                            <li ><a href="https://google.de" target="_blank" >
+                                2.4 - Setting Form ▸</a> </li>
+
+                        </ul>
+
+                    </li>
+                   
+                    
+                    <!-- -------------------------------- -->
+                    <!-- Header 03                        -->
+                    <!-- -------------------------------- -->
+                    <li>
+                        
+                        <span>3.0 &nbsp; &#8210; &nbsp; RegEx </span>
+
+                        <ul>
+
+                            <li><a href="https://google.de" target="_blank">
+                                3.1 - Different username patterns ▸</a> </li>
+
+                            <li ><a href="https://google.de" target="_blank" >
+                                3.2 - Requirements for password  ▸</a> </li>
+
+
+                        </ul>
+
+                    </li>
+
+                    <!-- -------------------------------- -->
+                    <!-- Header 04                        -->
+                    <!-- -------------------------------- -->
+                   
+                    <li>
+                        
+                        <span>4.0 &nbsp; &#8210; &nbsp; Multimedia </span>
+
+                        <ul>
+
+                            <li><a href="https://google.de" target="_blank">
+                                4.1 - Different img types ▸</a> </li>
+
+                            <li ><a href="https://google.de" target="_blank" >
+                                4.2 - Different video types ▸</a> </li>
+
+                            <li ><a href="https://google.de" target="_blank" >
+                                4.3 - Audio list ▸</a> </li>
+
+
+                        </ul>
+
+                    </li>
+
+
+
+
+                    </li>
+
+                </ul>
+            </li> <!-- end of responsive layouts -->
+        </ul> <!-- end of nav-content-list (Navigation List) -->
+
+
+            </div>
+            
+
+
+            <!-- ---------------------- -->
+            <!-- 2.col , 1.row          -->
+            <!-- ---------------------- -->
+
+            <div class="navbox-c-trans-box"></div>
+
+
+        </div>
+        
+
+   
+
+ 
+
+    </main>
+</body>
+</html>
