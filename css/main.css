@@ -1,0 +1,469 @@
+/* ----------------------------------------------------------------- */
+/* MAIN - Block
+/* ----------------------------------------------------------------- */
+/* 1. Grid-Layout ( centered ) , Infoboxes ( pdf, link-nav )
+/* 2. Media Queries for infoboxes , mavigation window
+/* 3. Navigation Window Links - ( style,pos,effects )
+/* ----------------------------------------------------------------- */
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* 1. Grid-Layout ( centered ) , Infoboxes ( pdf, link-nav )
+/* ----------------------------------------------------------------- */
+
+
+/* --------------------------------------------- */
+/* Grid-Layout ( centered ) -> Infoboxes 
+/* --------------------------------------------- */
+
+div#grid-main-center { 
+
+    /* under header , under last infobox 1em space */
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    display: grid;  
+    grid: auto / 445.22px;
+    row-gap: .8em; 
+
+
+    /* ( dont forget ; border-left,right each 3px = 6px )*/
+
+    /* 445.22px is auto max content of the biggest infobox width */
+    /* this is our max width */
+    /* to let no jump effect by open scrollbar , calculate 
+    /* pos. centered only from the left side */
+
+    /* so justify-content would be do jump effect by scrollbar open */
+
+    padding-left: calc( 50vw - (445.22px/2) ); 
+}
+
+
+
+
+
+/* --------------------------------------------- */
+/* Infoboxes ( pdf, link-nav )
+/* --------------------------------------------- */
+
+
+/* basic style of infoboxes */
+.style-infobox { 
+
+    background-color:var(--skin-brown);
+    border: 3px solid black;
+    padding: .3em;    
+}
+
+/* layout - infobox title & svg flag */
+.flex-infobox-title {
+
+    display: flex;
+    /* ( put left edge , space , put right edge )*/
+    justify-content: space-between;
+     
+}
+
+/* ( only table style in special div box ) */
+div.style-infobox > table { width: 100%; }
+
+/* content in table cell align top */
+div.style-infobox > table tr { vertical-align: top; }
+
+/* only in every tr , the first td width of 15% (svg place) */
+div.style-infobox > table tr > td:first-child { width: 15%; }
+
+/* only second td in every tr put special style/pos setting */
+div.style-infobox > table tr > td:nth-child(2) {
+
+    width: 85%; padding-left:.5em;
+}
+
+
+
+
+
+
+/* ----------------------------------------- */
+/* img/svg-sizes of infoboxes
+/* ----------------------------------------- */
+
+
+/* svg-header-size (pdf,arrow-up)*/
+.svg-h-size {
+    width: auto; 
+    height: 3.5em; 
+}
+
+/* svg-header-flag-size ( countries ) */
+.svg-hf-size {
+
+    width: auto;
+    height: 1em;
+} 
+
+/* clipart - backpack-reading-book */
+.svg-clipart-size2 {
+
+    float:right;
+    width: auto;
+    height: 6em;
+}
+
+/* clipart - show to templates */
+.svg-clipart-size {
+
+    float:right;
+    width: auto;
+    height: 6em;
+}
+
+/* to clear float of image -> clean way */
+/* temp idea, works without too */
+/* only interest by complex txt passages */
+.float-img-clear { clear:both; }
+
+
+/* ----------------------------------------- */
+/* txt-size/style for infobox
+/* ----------------------------------------- */
+
+/* infobox-title, 2nd infobox-title */
+.style-ib-title { font-weight: bold; }
+.style-ib-2nd { font-style: italic; padding-top:.3em; }
+
+/* info-content-txt-size */
+.ic-size { font-size: .8em; }
+
+/* infobox-txt-line-height */
+.ic-size-line-height { line-height: 2em; }
+
+/* pos of infobox-content */
+.pdf-infobox-content-pos { padding-top: 1em; }
+
+.link-nav-infbox-content-pos { padding-left:.8em; }
+
+
+
+
+
+
+/* ----------------------------------------- */
+/* link effects/style in infoboxes
+/* ----------------------------------------- */
+
+
+/* hover - pdf-links */
+div.pdf-link > a:hover { font-weight: bold; }
+
+/* no underline by info-nav-link */
+a.info-nav-link { text-decoration: none; color:black;}
+
+
+
+/* default -> white svg arrow-up unshown */
+div.link-hover > img:last-child 
+{ display: none; }
+
+/* hover over link-nav box border-> blue ...*/
+a.info-nav-link:hover > div:hover {
+
+    border: 3px solid var(--html-orange-red);
+    color:white;
+    background-color: var(--moon-dark);
+
+}
+
+/* unshown by hover black arrow up */
+a.info-nav-link:hover div.link-hover > img:first-child { display: none; }
+
+/* show by hover white arrow up ( black background ) */
+a.info-nav-link:hover div.link-hover > img:last-child { display: inline-block; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* 2. Media Queries for infoboxes , navigation - window
+/* ----------------------------------------------------------------- */
+
+/* info: */
+/* if scrollbar is closed -> breakpoint work e.g by 480px 
+/* if scrollbar is open -> breakpoint work e.g by 463px ( 480px-17px(chrome-scrollbar) )
+/* media queries incluse width of scrollbar, other solution work with js */
+
+
+/* ---------------------------------------------------------------- */
+/* <= 463px ( scrollbar open )  / <= 480px ( scrollbar closed )
+/* ( this small range is no problem to be responsive, some earlier ,
+/* ( some little bit later )            
+/* ---------------------------------------------------------------- */
+@media (max-width: 480px ) {
+
+
+    /* make infobox smaller for mobile devices */
+    div#grid-main-center {
+    
+        grid: auto / 400px;
+        padding-left: calc( 50vw - (400px/2) );
+    
+    }
+
+    /* svg-header-size (pdf,arrow-up)*/
+    .svg-h-size { height: 3em;  }
+
+     
+    /* clipart - backpack-reading-book */
+    .svg-clipart-size2 {  height: 5em;  }
+       
+     
+    /* clipart - show to templates */
+    .svg-clipart-size { height: 5em;  }   
+    
+    
+
+    /* --------------------------------------- */
+    /* Navigation Window change to 100 % width
+    /* (transparent layer unshown ) 
+    /* --------------------------------------- */
+
+    /* unshown transparent box bei small devices */
+    div.navbox-c-trans-box { display: none;  } 
+    
+    /* del border-right, p-right smaller */
+    div.navbox-c-list  {
+
+        border-right: 0px;
+        padding-right: .5em; 
+        width: 100%;
+    }
+
+    /* ul - content auto linebreaks */
+    div.navbox-c-list > ul { width: auto; }
+
+}
+
+
+	 
+
+
+
+/* ---------------------------------------------------------------- */
+/* <= 403px ( scrollbar open )  / <= 420px ( scrollbar closed )
+/* ---------------------------------------------------------------- */
+@media (max-width: 420px ) {
+
+
+    /* make infobox smaller for mobile devices */
+    div#grid-main-center {
+    
+        grid: auto / 350px;
+        padding-left: calc( 50vw - (350px/2) );
+    
+    }
+
+    /* pos top more down */
+    .link-nav-infbox-content-pos { 
+        padding-top: 1.5em;
+    }
+        
+}
+
+
+/* ------------------------------------------------------------- */
+/* only responsive width: 320px ( iphone 5 is 320px )
+/* the most new smartphone in 2022 are min. 400px width
+/* ------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------- */
+/* <= 353px ( scrollbar open )  / <= 370px ( scrollbar closed )
+/* ---------------------------------------------------------------- */
+@media (max-width: 370px ) {
+
+
+    /* make infobox smaller for mobile devices */
+    div#grid-main-center {
+    
+        grid: auto / 300px;
+        padding-left: calc( 50vw - (300px/2) );
+    
+    }
+
+     /* svg-header-size (pdf,arrow-up)*/
+     .svg-h-size { height: 2.5em;  }
+
+     
+     /* clipart - backpack-reading-book */
+     .svg-clipart-size2 {  height: 4em; padding-top: 1em; }
+        
+      
+     /* clipart - show to templates */
+     .svg-clipart-size { height: 4em; padding-top: 1.5em;}   
+     
+     /* pos top more down */
+     .link-nav-infbox-content-pos { 
+         padding-top: 1.5em;
+     }
+        
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* 3. Navigation Window Links - ( style,pos,effects )
+/* ----------------------------------------------------------------- */
+
+
+/* ------------------------------------- */
+/* style,pos,effects of nav-window 
+/* ------------------------------------- */
+
+/* navigation windows looks on main pos. */
+/* without this it will be go to top edge by top:0px*/
+main { position: relative;  }
+
+
+/* flexlayout - navigation-window (open as 100% of window - width ) */
+.navbox-c-flex {
+
+    /* absolute - to be over main content */
+    position: absolute;
+    /* got direct under main-tag */
+    top:0px;
+    margin-left: -200vw;
+
+    /*by 100vw it will gen. scrollbar */
+    width: 100%;
+    /* 75px of header height, to fit ideal max screensize */
+    min-height: calc( 100vh - 75px );
+
+    display: flex;
+    
+
+     /* transition effect - ease-in-out*/
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -ms-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+  
+     /*background-color: yellow; */
+
+}
+
+
+/* style - navbox-container-list */
+.navbox-c-list  {
+    padding-right: 1em;
+   
+    background-color: var(--moon-dark);
+    border-right: 3px solid var(--html-orange-red);
+    /*color:white; */       
+}
+
+/* ul dominate content in navbox-c-list */
+.navbox-c-list > ul {
+
+    /* 400px is for most mobile device good too */
+    /* longer content will be linebreak */
+    width: 400px;   
+}
+
+
+
+
+
+/* transparent area of navigation - window */
+.navbox-c-trans-box { 
+    /* in absolute mode should say that width is 100% */
+    width: 100%;
+    /* transparent black opacity 0.8 */
+    background-color: rgba(0,0,0,0.8);	 
+}
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* navigation window ul , li , link styles  ( icons: ▶⚹✱›● ▸)
+/* ------------------------------------------------------------------ */
+
+/* default ul */
+ul { 
+    /* def. bullets unshown */
+    list-style: none;
+    line-height: 2.5em;
+    margin-left: -25px;
+    color:var(--white);   
+}
+
+
+
+/* ------------------------------------------------------ */
+/* default link style / effects in navigation window 
+/* ------------------------------------------------------ */
+
+/* default all links in nav are blue */
+ul.nav-ul a {
+
+    text-decoration: none;
+
+    color:var(--html-orange-red);
+    opacity: 0.8;
+}
+
+
+/* default hover for all links in nav */
+ul.nav-ul a:hover {
+    text-decoration: underline;
+    color:var(--skin-brown);
+}
+
+    
+
+/* all nav headers in li & span ( no-link , just info ) -> white */
+div > ul.nav-ul li > span  {
+    color:var(--white);
+    font-weight: bold;
+}
+
+/* sup sup nav header skin-brown */
+ul.nav-ul span.style-nav-2nd-header   {
+    color:var(--skin-brown);
+    opacity: 0.8;
+}
+
+
+/* line-height by not numbered links little bit smaller (looks better) */
+.pos-not-numbered  {
+    line-height: 2em;
+   
+}
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+/* ----------------------------------------------------------------- */
+/* :root (var) , body - Block
+/* ----------------------------------------------------------------- */
+/* > :root color variable ( read from <html> )
+/* > body main css styles ( view page of webseite )
+/* > basic link effects / style 
+/* ----------------------------------------------------------------- */
+
+
+
+
+
+/* begin at <html> - Tag */
+:root {
+    
+    /* basic var colors */
+    --html-orange-red: #ed4c05;
+    --skin-brown: #d1c0a5;
+    --moon-dark: #212121;
+    --white: white;
+}
+
+
+body  { 
+     
+    margin: 0; /* webseite begin at the edge */
+    /* basic font-style/size */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em; /*(1em=16px, 16*1.2)*/  
+
+    overflow-y: hidden;
+
+    
+} 
+
+/* all links shouldnt show visited blue color */
+ a:visited { color:black;}
+
+
+/* because main content will never be bigger & 
+/* with media queries it will be formed on all devices
+/* ( only scrolled if navbox-container-link list is bigger ) */
+
+
+
+/* ----------------------------------------------------------------- */
+/* Background ( Video , Color-Mix ) - Block
+/* ----------------------------------------------------------------- */
+/* > Mobile -> color-mix
+/* > Desktop -> video 
+/* ----------------------------------------------------------------- */
+
+
+div.bg-colormix , video.bg-video {
+
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%; 
+}
+
+
+.bg-colormix {
+
+    background-color: #97999c; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, #34466c , #97999c);
+}
+
+
+/* show colormix -> video unshown */
+@media (max-width:1279px) {
+
+    video.bg-video { display: none;}
+} 
+/* show video -> colormix unshown */
+@media ( min-width: 1280px ) {
+
+    div.bg-colormix { display: none;}
+}

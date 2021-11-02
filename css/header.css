@@ -1,0 +1,209 @@
+/* ----------------------------------------------------------------- */
+/* HEADER - Block
+/* ----------------------------------------------------------------- */
+/* 1. style header & def. as grid ( 1.col , 2.col )
+/* 2. click handling ( naxbox - open,closed ) ( :target )
+/* 3. media-queries for smaller devices 
+/* ----------------------------------------------------------------- */
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* 1. style header & def. as grid ( 1.col , 2.col )
+/* ----------------------------------------------------------------- */
+
+
+/* style - header */
+header { 
+    border-bottom: 5px solid var(--moon-dark); 
+    /* to let it on the top, bec. nav-window is absolute */
+    position: relative;
+} 
+
+
+/* style - basic header link (black,no underline) */
+header > a { color:black; text-decoration: none; }
+
+
+/* grid-layout - header */
+#header-grid {
+
+    display: grid;
+    /* troubleshouting -> white space by only 70px */
+    /* reason could be of grid */
+    grid: 70px / auto 1fr;
+    
+}
+
+
+/* style - 2-boxes (2.cols) of headers  */
+#style-h-navbox , #style-h-navbox-title {
+    
+    display: flex;
+    align-items: center;
+    padding-left: .5em;
+    padding-right: 1em;
+
+    /* only for a-link not to be inline */
+    /* ( link-inline max. height to get max area )*/
+    height: 100%;
+}
+
+
+/* style - navbox (:target) */
+#style-h-navbox {
+
+    background-color: var(--skin-brown);
+    font-weight: bold;
+}
+
+/* style - navbox-title */
+#style-h-navbox-title {
+
+    background-color: var(--moon-dark);
+    color:white;
+}
+
+/* style-pos - navbox-title */
+#style-h-navbox-title { padding-left: 1em; }
+
+
+
+/* -------------------------------- */
+/* header - img - sizes             */
+/* -------------------------------- */
+
+
+/* img-arrow - navbox */
+.img-arrow-size {
+    width: 1em;
+    height: 1em;
+
+    /* img specify perfect pos*/
+    padding-left: .7em;
+    /*padding-top: .1em; */
+}
+
+/* set height - middle pos little bit higher */
+/* ( span/unicode height is higher than txt height ) */
+/* ( without this another middle will be calc ) */
+#span-centered-nav { padding-bottom: .1em; }
+#span-centered-nav-title { padding-top: .1em; }
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* 2. click handling ( naxbox - open,closed ) ( :target )
+/* ----------------------------------------------------------------- */
+
+/* ------------------------------------------------ */
+/* 2.1 open / closed - navbox (:target)
+/* ------------------------------------------------ */
+
+
+
+/* ------------------------------------------------ */
+/* default nav - closed mode
+/* ------------------------------------------------ */
+
+/* default unshown open mode */
+a[href="#closed-nav"]#closed-nav { display: none; }
+
+
+/* if clicked -> 1. unshown closed mode , 2. show open mode */
+/* 1. unshown closed mode */
+
+#open-nav:target a[href="#open-nav"]#open-nav { display: none;}
+
+/* 2. show open mode */
+#open-nav:target a[href="#closed-nav"]#closed-nav { display: inline-block; }
+    
+/* style-hover by navbox (blue) */
+header > a > div#style-h-navbox:hover {
+    background-color: var(--html-orange-red);
+} 
+
+
+
+/* ------------------------------------------------ */
+/* nav - open mode
+/* ------------------------------------------------ */
+
+/* open nav -> set blue background to navbox */
+#open-nav:target a[href="#closed-nav"]#closed-nav > div {
+    background-color: var(--html-orange-red);
+}
+/* open -nav > set blue linke to header */
+#open-nav:target header {
+    border-bottom: 5px solid var(--html-orange-red);
+}
+
+
+/* link to close open nav -> in closed mode */
+/* 2. close open mode */
+
+#closed-nav:target a[href="#closed-nav"]#closed-nav { display: none; }
+
+/* 1. show closed mode */
+
+#closed-nav:target a[href="#open-nav"]#open-nav { display: inline-block;}
+
+
+
+/* if clicked open nav - content - list */
+/* from - value (left edge) to 0px (show ) */
+
+#open-nav:target main > div.navbox-c-flex { 
+    margin-left:0vw; 
+}
+
+/* only by open nav-window overflow-y: auto, 
+because main content dont will be for scroll */
+#open-nav:target { overflow-y: auto; }
+
+    
+    
+
+
+
+    
+    
+
+   
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* 3. media-queries for smaller devices 
+/* ----------------------------------------------------------------- */
+
+/* do header content smaller */
+@media (max-width:720px) {
+    
+    /* unshown long header txt */
+    .mobile-unshown { display: none; }
+
+    /* do navbox smaller (auto, better solution) */
+    #header-grid {
+        grid: 70px / 80px 1fr;
+    }
+
+    /* do arrow-img little bit bigger */
+    .img-arrow-size {
+        padding-left: .35em;
+        height: 1.1em;
+    }
+
+} 
