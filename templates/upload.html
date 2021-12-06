@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+     <!-- --------------------------------------------------- -->
+    <!-- FAVICONS                                            -->
+    <!-- --------------------------------------------------- -->
+
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="https://drive.google.com/uc?id=1gFhaQNu45nbh9wBItKEP231P6SFbX_Qf&export">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://drive.google.com/uc?id=1M36Ua_pbN3CztVrFdrRQv3td8XDn5eTk&export">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://drive.google.com/uc?id=15WtsxtC8U__g2gDAsaEZga__oCeqQvCP&export">
+
+
+    <title>HTML - Upload Form</title>
+</head>
+<body>
+
+    <!-- -------------------------------------------- -->
+    <!-- Registration 01                              -->
+    <!-- -------------------------------------------- -->
+
+    <h3>Upload Form</h3>
+
+    
+    <!-- action is server script and post not to transfer over url -->
+    <form enctype="multipart/form-data" method="post">
+
+
+    <fieldset>
+
+
+            <legend>Upload Excel Form</legend>
+
+            <p> Upload your working Excel - Document to check your own working statistic</p>
+
+            <br><br>
+
+
+            <label for="short-text">Title of your Excel File:</label>
+            <input type="text" name="short-excel-text" id="short-text" maxlength="80" size="50" placeholder="max 80 characters">
+
+            <br><br>
+
+            <!-- max upload size is 20mb per file , html file work with bytes, so 1mb = 1048576 bytes -->
+            <label for="upload-button">Choose your Excel File</label>
+            <input type="file" accept="application/msexcel" id="upload-button" name="excel-upload" size="20971520">
+
+
+            <br><br>
+
+            <textarea rows="10" cols="50" placeholder="Optional Description Add , if u want something important to inform ..."></textarea>
+
+            <br><br>
+
+            <input type="radio" name="prio" id="easy">
+            <label for="easy">Prio - Easy </label>
+            
+            <input type="radio" name="prio" id="medium">
+            <label for="medium">Prio - Medium </label>
+            
+
+            <input type="radio" name="prio" id="important">
+            <label for="important">Prio - important </label>
+            
+
+
+            <br><br>
+
+            <input type="submit" id="exel-file-upload" value=" Upload Excel File ">
+
+        </form>
+       
+
+    </fieldset>
+
+
+    
+    
+    
+    <br><br><br>
+
+    <hr>
+
+  
+
+  
+    
+</body>
+</html>
