@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- --------------------------------------------------- -->
+    <!-- FAVICONS                                            -->
+    <!-- --------------------------------------------------- -->
+
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="https://drive.google.com/uc?id=1gFhaQNu45nbh9wBItKEP231P6SFbX_Qf&export">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://drive.google.com/uc?id=1M36Ua_pbN3CztVrFdrRQv3td8XDn5eTk&export">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://drive.google.com/uc?id=15WtsxtC8U__g2gDAsaEZga__oCeqQvCP&export">
+
+
+
+    <title>Regex - Username </title>
+</head>
+
+<body>
+
+  <h4><mark>Mini Introduction in Regex Pattern </mark></h4> 
+
+  <p>First of all in the Internet u get an good regex online simulator to test ur own regex on
+      your special word to check. Here ist the link to 101regex: 
+      <a href="https://regex101.com/" target="_blank">to regex online simulator </a>
+  </p>
+
+  <br><br>
+
+
+  <table border="1">
+
+
+    <tr>
+
+        <th>Areas ( Bereiche ) </th>
+        <th>Quantoren </th>
+        
+
+    </tr>
+
+    <tr>
+
+        <td>
+            <ul>
+                <li><b>[ acf ]</b> - One of the character a,c or f ( Minimum one )</li>
+                <li><b>[ ^acf ]</b> - One character but <b>not</b> one of these a,c or f (negation) </li>
+                <li><b>[ <mark>1-3</mark>a-c<mark>A-C</mark> ]</b> - One of 1,2,3 or one of a,b,c,A,B,C ( Minimum one ) </li>
+                <li><b>[ 1-3 ] [ a-c ] [ A-C ] </b> - One of 1,2,3 then direct a,b or c and then direct one of A,B,C ( e.g 1bB , 3aC ) </li>
+               
+            </ul>
+            
+        </td>
+
+
+        <td>
+
+
+            <ul>
+                <li><b>[ acf ]* </b> - no one or many character of a,c or f ( e.g a, "empty" , accc, ffa , f , ... )</li>
+                <li><b>[ 1-3 ]+ </b> - Minimum one of 1,2,3 or more of them </li>
+                <li><b>[ acf ]? </b> - no one or only one character of a,c,f </li>
+                <li><b>[ 1-3 ]{ 3 }</b>  - exact three character of 1,2,3 not more not less ( e.g  111 , 123, 211, ... ) </li>
+                <li><b>[ 1-3 ]{4, }</b>  - minimum 4 character of 1,2,3 or more ( e.g 1111, 12344, ...) </li>
+                <li><b>[ acf ]{ 2, 5 }</b>  - two till five character of a,c,f ( e.g aafff , ffaaa ) </li>
+               
+            </ul>
+            
+        </td>
+      
+
+    </tr>
+
+    <tr>
+
+        <th>Group - Logic </th>
+        <th>Character Classes ( short form ) </th>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+        
+            
+            <ul>
+                <li><b> Web( Engineering)? </b> - allow is web or web engineering ( capturing group )</li>
+                <li><b>Web(Engineering|Technology) </b> - allow more posibilties , web engineering and web technology is allow </li>
+            </ul>
+            
+        </td>
+        <td>
+        
+            <ul>
+                <li><b> \d </b> - one number of 0 - 9 ( same [0-9] )</li>
+                <li><b> \D </b> - negation of \d , allow all but not numbers of 0 - 9 ( same [^0-9]) </li>
+                <li><b> \w </b> - allow one numbers or alphabet characters or only underline character ( same [0-9a-zA-Z_] ) </li>
+                <li><b> \W </b> - negation of \w </li>
+                <li><b> \s </b> - one unicode-space ( e.g space, linebreak, tab )</li>
+                <li><b> \S </b> - negation of \s </li>
+            </ul>
+        
+        </td>
+
+    </tr>
+
+  </table>
+
+  <br>
+
+  <mark>some more ( in german )</mark> <br>
+
+  <table border="1">
+
+    <tr>
+
+        <td>
+           
+            <img src="https://drive.google.com/uc?id=12SDliIkuf4Ukqta6dniRJrwMARHFDBki&export" alt="img" width="380" height="300">
+
+        </td>
+
+
+        <td>
+            <img src="https://drive.google.com/uc?id=1DJol5P0tWRKUuHaJG9JM138qNVdrKUob&export" alt="img" width="650" height="300">
+        </td>
+
+        <td>
+            <img src="https://drive.google.com/uc?id=1JfCETSZhdJsI2_jrimSbqYwnvLJp3CtF&export" alt="img" width="580" height="300">
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td colspan="2">
+
+            <img src="https://drive.google.com/uc?id=1R1yK_LgdNDERPLfGrAmVC-j8LM0Ua7Yi&export" alt="img" width="380" height="300">
+
+        </td>
+
+        <td>
+            <img src="https://drive.google.com/uc?id=1xA4WJqgzuMWjpHoSpN6eGkW2mBTNLTGo&export" alt="img" width="380" height="300">
+
+        </td>
+
+    </tr>
+
+  </table>
+
+  <br><br>
+  <hr> <br><br>
+
+
+  <!-- ----------------------------------- -->
+  <!-- Mini Exercices      -->
+  <!-- ----------------------------------- -->
+
+  <h4><mark>Mini Excerices:</mark></h4>
+
+  <table border="1">
+
+    <tr>
+        <td>
+            <img src="https://drive.google.com/uc?id=1ZrESV_FJGaB9YQYbGNg5Z0JXUaMs1TsT&export" alt="img" width="580" height="250"> 
+        </td>
+        
+        <td>
+            <p>all words in the left column should work with ur regex and right column shouldnt accept</p>
+            <img src="https://drive.google.com/uc?id=18isuIw-4mU9LeJI9SvWevb7vIq4-txqc&export" alt="img" width="480" height="300"> 
+        </td>
+    </tr>
+
+    <!-- solution -->
+    <tr>
+        <td>
+            <mark>solution:</mark>
+            <ul>
+                <li>AAAZ#</li>
+                <li>AAAZ###1</li>
+                <li>DADZ#3</li>
+            </ul>
+            <p>the # is a character that should come direct
+                after and the + means that minimum #-chacter should come one time or more
+            </p>
+            <mark>control check:</mark> <br>
+
+            <img src="https://drive.google.com/uc?id=1kxVXtKZ3Qhiztj_-_YljMm4Hc_A8zDE-&export" alt="img" width="720" height="450"> 
+
+        </td>
+
+        <td>
+            <mark>solution:</mark>
+           
+            <p>Brainstorming:  </p>
+           
+            <ul>
+                <li> Tic only can be one till three times in the beginning</li>
+                <li> After it is allow that Tac can be 
+                    on the second place or on the last place</li>
+                <li>  All Words can be maximum used 4 times and minimum 2times</li>
+                <li>  Toc is only allow on the last position , and secont, third position. Only Tic,Tac,Toc words are allowed . </li>
+                
+            </ul>
+
+
+            <mark>actually to complex to solve , because u need more practice in different concepts , groups words etc:</mark>
+
+            <br><br>
+
+            <p>One direction solve: [(Tic|Tac|Toc)]{6,12}</p>
+        </td>
+    </tr>
+
+  </table>
+
+  <!-- ----------------------------------- -->
+  <!-- 01 - From of username rules         -->
+  <!-- ----------------------------------- -->
+
+  <br><br>
+
+  <h4>#1 - Username Regex ( first 5 alphabet character & exactly 3 numbers , e.g nikol123)</h4>
+
+  <mark>solution:</mark>^[a-zA-Z]{5}[0-9]{3}$ <br><br>
+
+  <mark>controll check:</mark> <br><br>
+
+  <img src="https://drive.google.com/uc?id=1wWo-DKmslNfyqa41BZ7wpHYCqC8Ir2fh&export" alt="img" width="720" height="450"> 
+
+
+  <br><br>
+  <form action="" method="post">
+
+
+    <input type="text" id="username" placeholder="enter the correct username form ..." size="50"
+    pattern="^[a-zA-Z]{5}[0-9]{3}$"  >
+
+    <input type="submit" value="check">
+
+
+  </form>
+
+
+
+
+
+  <!-- ----------------------------------- -->
+  <!-- 01 - From of username rules         -->
+  <!-- ----------------------------------- -->
+    
+</body>
+
+
+
+
+</html>
